@@ -17,8 +17,8 @@ botController.spawn({
 
 botController.hears('', ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
   const text = message.text;
-
-  witCtrl.sendMessage(text, (replyText) => {
+  const userId = message.user;
+  witCtrl.sendMessage(text, userId, (replyText) => {
     bot.reply(message, replyText);
   });
 

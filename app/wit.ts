@@ -54,11 +54,11 @@ export class WitController {
   }
 
 
-  public sendMessage(text, callBackFn) {
+  public sendMessage(text, sessionId, callBackFn) {
 
     this.messageCallback = callBackFn;
 
-    this.client.runActions('test-123', text, {})
+    this.client.runActions(sessionId, text, {})
       .catch(console.error);
   }
 
